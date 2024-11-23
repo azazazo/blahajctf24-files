@@ -13,7 +13,7 @@ def encrypt(message, key):
         s = state[i % len(state)]
         output.append(m ^ s)
         if i % len(state) == 0:
-            state == RC4_KeySchedule(state, state) # this must be secure, right? You can't figure next xor stream data without knowing the state!
+            state = RC4_KeySchedule(state, state) # this must be secure, right? You can't figure next xor stream data without knowing the state!
     return output
 
 from os import urandom
